@@ -1,3 +1,5 @@
+>> Cimpfo by Cyb3r
+>>
 >> PHP5 Messenger bot for 37signals's Campfire
 >> 
 >> MIT License
