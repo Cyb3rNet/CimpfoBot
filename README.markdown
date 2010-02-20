@@ -1,10 +1,11 @@
->> Messenger bot for 37signals's Campfire
+>> PHP5 Messenger bot for 37signals's Campfire
 >> 
 >> MIT License
 >>
+>> Version 0.1
+>> 
 >> Uses 37signals's Campfire API
->>
->> Developed in PHP 5
+>> Uses CURL librairy
 
 I spent some time playing with the Campfire API but mainly I was looking to implement a messenger bot for Campfire. Currently, Cimpfo 0.1, has two parts:
 
