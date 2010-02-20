@@ -3,15 +3,28 @@
 >> MIT License
 >>
 >> Uses 37signals's Campfire API
+>>
+>> Developed in PHP 5
 
 I spent some time playing with the Campfire API but mainly I was looking to implement a messenger bot for Campfire. Currently, Cimpfo 0.1, has two parts:
 
-* The Messenger Service
-** Submits messages to Campfire
+* The Cimpfo Messenger Service
+	* Submits messages to Campfire
 * The Twitter Requester
-** Requests user updates from Twitter
+	* Requests user updates from Twitter
 
 I still have to tweak it so Twitter messages won't reappear once submitted. My goal is to add more publishers to the messenger service so I can 
 have access to information where it might be blocked by firewall for example.
+
+## Usage
+
+I run it on a web server with a cron job running it 4 times per hour. The main file is **cimpfo.php**.
+
+## Configuration
+
+Currently there's 2 configuration files, one for the Campfire API service and one for the Twitter API service.
+
+* **campfire.confs.inc.php**
+* **twitter.confs.inc.php**
 
 Fork it and give some feedback.
