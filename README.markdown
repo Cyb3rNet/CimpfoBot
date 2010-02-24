@@ -31,3 +31,17 @@ Currently there's 2 configuration files, one for the Campfire API service and on
 * **twitter.confs.inc.php**
 
 Fork it and give some feedback.
+
+## User Agent Test
+
+Make a request with a URL parameter UA=1. Does not publish to Campfire but ouputs results in the browser/user agent.
+
+Example:
+
+    http://cimpfo.domain.tld/cimpfo.php?UA=1
+
+## Tested
+
+Submit request/issues through the github Issues project section.
+
+~::~ Cyb3r ~::~
