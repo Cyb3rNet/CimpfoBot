@@ -150,12 +150,13 @@ class CTwitterUpdatesPublisher extends CTwitterUpdatesParser
 	
 	public function LoadLastUpdateId()
 	{
-		if (filesize(self::sFileTwitter) != 0)
+		if (filesize(self::sFileTwitter) > 0)
 		{
 			$sValue = fread($this->_hFileUpdateId, filesize(self::sFileTwitter));
-		
-			$this->_iLastUpdateId = strval($sValue);
+	
+			$this->_iLastUpdateId = $sValue;
 		}
+		echo "<div><strong>".$this->_iLastUpdateId."</strong><div>";
 	}
 	
 	public function WriteLastUpdateId()
@@ -173,10 +174,12 @@ class CTwitterUpdatesPublisher extends CTwitterUpdatesParser
 		
 		foreach ($this->_aoSTUs as $oSTU)
 		{
-			if ($oSTU->GetId() > $this->_iLastUpdateId)
+			echo "<div>".$oSTU->GetId()."</div>";
+			
+			if (bccomp($oSTU->GetId(), $this->_iLastUpdateId) == 1)
 			{
 				$this->_iLastUpdateId = $oSTU->GetId();
-				
+			
 				$oG_CCV->iLastUpdateId = $oSTU->GetId();
 				
 				$asMsg[] = S_TWITTER_NAME." - ".$oSTU->GetUser()." :: ".$oSTU->GetText();

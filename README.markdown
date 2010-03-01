@@ -1,4 +1,4 @@
->> Cimpfo by Cyb3r
+>> Cimpfo by Serafim Junior Dos Santos Cyb3r Net
 >>
 >> PHP5 Messenger bot for 37signals's Campfire
 >> 
@@ -39,9 +39,3 @@ Make a request with a URL parameter UA=1. Does not publish to Campfire but ouput
 Example:
 
     http://cimpfo.domain.tld/cimpfo.php?UA=1
-
-## Tested
-
-Submit request/issues through the github Issues project section.
-
-~::~ Cyb3r ~::~
