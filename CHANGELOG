@@ -1,3 +1,9 @@
+0.1.2
+	Splitted the project in two:
+		* Cimpfony: The Campfire APi Wrapper
+		* CimpfoBot: The Campfire bot
+	Cimpfony is now a submodule of CimpfoBot
+	Tested the new paths
 0.1.1
 	Corrected the bug of the repeating Twitter updates
 0.1
