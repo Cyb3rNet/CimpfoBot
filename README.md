@@ -1,26 +1,26 @@
 >> CimpfoBot by Serafim Junior Dos Santos Fagundes Cyb3r Network
 >>
->> PHP5 Messenger bot for 37signals's Campfire
+>> PHP5 Messenger Bot for 37signals's Campfire Chatroom Web Application
 >> 
 >> MIT License
 >>
 >> Version 0.1.2
 >> 
->> Uses 37signals's Campfire API
+>> Uses Cimpfony, a Library for the API Service of 37signals's Campfire Chatroom Web Application
 >> Uses CURL librairy
 >>
 >> Copyright (c) 2009-2010 Serafim Junior Dos Santos Fagundes
 
 I spent some time playing with the Campfire API but mainly I was looking to implement a messenger bot for Campfire. Currently, CimpfoBot 0.1.2, is three constituances:
 
-* The Cimpfo Library
-	* 37Signal's Campfire API Wrapper in PHP
+* The Cimpfony Library
+	* An API Wrapper in PHP for 37Signals's Campfire Chatroom Web Application
 * The CimpfoBot Messenger Service
 	* Submits messages to Campfire
 * The Twitter Requester
 	* Requests user updates from Twitter
 
-My goal is to add more publishers to the messenger service so I can have access to information where it might be blocked by firewall, but the main goal of this bot is to test the development of Cimpfo, Campfire's API Wrapper Library.
+My goal is to add more publishers to the messenger service so I can have access to information where it might be blocked by firewall, but the main goal of this bot is to test the development of Cimpfo, Campfire's API Service Library.
 
 ## Usage
 
