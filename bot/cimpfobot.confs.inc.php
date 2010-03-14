@@ -1,7 +1,11 @@
 <?php
 
 
-define('I_CAMPFIRE_ROOMID', '');
+include("campfire.confs.inc.php");
+include("twitter.confs.inc.php");
+
+
+include("lib/Cimpfony/cimpfony.in.php");
 
 
 ?>

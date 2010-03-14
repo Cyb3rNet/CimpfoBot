@@ -1,8 +1,6 @@
 <?php
 
-require_once("curl.inc.php");
-
-require_once("twitter.confs.inc.php");
+require_once("lib/Cympfony/lib/curl.inc.php");
 
 ////
 //// CLASS - TWITTER GET UPDATES FROM USERS

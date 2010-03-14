@@ -1,0 +1,3 @@
+[submodule "bot/lib/Cimpfony"]
+	path = bot/lib/Cimpfony
+	url = git@github.com:Cyb3rNet/Cimpfony.git

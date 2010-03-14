@@ -1,7 +1,7 @@
 <?php
 
-include("lib/campfire.inc.php");
-include("bot/twitter.inc.php");
+include("lib/Cimpfony/campfire.inc.php");
+include("twitter.inc.php");
 
 
 ////

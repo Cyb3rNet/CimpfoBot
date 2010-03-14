@@ -1,6 +1,7 @@
 <?php
 
-include("cimpfo.inc.php");
+include("cimpfobot.confs.inc.php");
+include("cimpfobot.inc.php");
 
 define('B_RUN', true);
 
