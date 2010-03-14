@@ -128,17 +128,23 @@ class CSimpleTwitterUpdate
 //
 class CTwitterUpdatesPublisher extends CTwitterUpdatesParser
 {
+	private $_sFileName;
+	
+	private $_iFileSize;
+
 	private $_hFileUpdateId;
 	
 	private $_iLastUpdateId;
-
-	const sFileTwitter = './twitter.id.txt';
 	
 	public function __construct()
 	{
 		parent::__construct();
 		
-		$this->_hFileUpdateId = fopen(self::sFileTwitter, 'w+');
+		$this->_sFileName = ROOTDIR.'/twitter.id.txt';
+		
+		$this->_iFileSize = filesize($this->_sFileName);
+		
+		$this->_hFileUpdateId = fopen($this->_sFileName, 'a+');
 		
 		$this->_iLastUpdateId = 0;
 	}
@@ -150,13 +156,14 @@ class CTwitterUpdatesPublisher extends CTwitterUpdatesParser
 	
 	public function LoadLastUpdateId()
 	{
-		if (filesize(self::sFileTwitter) > 0)
+		if ($this->_iFileSize > 0)
 		{
-			$sValue = fread($this->_hFileUpdateId, filesize(self::sFileTwitter));
+			$sValue = fread($this->_hFileUpdateId, $this->_iFileSize);
 	
 			$this->_iLastUpdateId = $sValue;
 		}
-		echo "<div><strong>".$this->_iLastUpdateId."</strong><div>";
+		
+		ftruncate($this->_hFileUpdateId, 0);
 	}
 	
 	public function WriteLastUpdateId()
@@ -174,8 +181,6 @@ class CTwitterUpdatesPublisher extends CTwitterUpdatesParser
 		
 		foreach ($this->_aoSTUs as $oSTU)
 		{
-			echo "<div>".$oSTU->GetId()."</div>";
-			
 			if (bccomp($oSTU->GetId(), $this->_iLastUpdateId) == 1)
 			{
 				$this->_iLastUpdateId = $oSTU->GetId();
