@@ -1,7 +1,7 @@
 <?php
 
-include("cimpfobot.confs.inc.php");
-include("cimpfobot.inc.php");
+include("bot/cimpfobot.confs.inc.php");
+include("bot/cimpfobot.inc.php");
 
 define('B_RUN', true);
 
@@ -81,9 +81,12 @@ if (B_RUN)
 		//
 		if ($oG_CCV->IsOnUA())
 		{
-			foreach ($oG_CCV->asCimpfoPublications as $sMsg)
+			if (count($oG_CCV->asCimpfoPublications))
 			{
-				$oG_CCV->PublishMessage($sMsg);
+				foreach ($oG_CCV->asCimpfoPublications as $sMsg)
+				{
+					$oG_CCV->PublishMessage($sMsg);
+				}
 			}
 		}
 	}

@@ -1,6 +1,6 @@
 <?php
 
-require_once("lib/Cympfony/lib/curl.inc.php");
+require_once(ROOTDIR."/bot/lib/Cimpfony/lib/curl.inc.php");
 
 ////
 //// CLASS - TWITTER GET UPDATES FROM USERS
@@ -138,7 +138,7 @@ class CTwitterUpdatesPublisher extends CTwitterUpdatesParser
 	{
 		parent::__construct();
 		
-		$this->_sFileName = ROOTDIR.'/twitter.id.txt';
+		$this->_sFileName = ROOTDIR.'/bot/twitter.id.txt';
 		
 		$this->_iFileSize = filesize($this->_sFileName);
 		

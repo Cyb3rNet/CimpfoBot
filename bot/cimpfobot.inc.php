@@ -1,6 +1,6 @@
 <?php
 
-include("lib/Cimpfony/campfire.inc.php");
+include(ROOTDIR."/bot/lib/Cimpfony/campfire.inc.php");
 include("twitter.inc.php");
 
 
