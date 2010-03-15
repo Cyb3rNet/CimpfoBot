@@ -1,3 +1,5 @@
+0.1.3
+	Now plays sound, 'crickets' if no publications, 'rimshot' when completed
 0.1.2
 	Splitted the project in two:
 		* Cimpfony: The Campfire APi Wrapper
