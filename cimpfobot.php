@@ -53,17 +53,24 @@ if (B_RUN)
 		
 		$oTUP->WriteLastUpdateId();
 		
-		foreach ($asMsgs as $sMsg)
-		{
-			$iMinSecs = 3;
-			$iMaxSecs = (I_NEXTSECSRUN / count($asMsgs));
 		
-			if (!$oG_CCV->IsOnUA())
+		if (!$oG_CCV->IsOnUA())
+		{
+			for ($i = 0; $i < count($asMsgs); $i++)
 			{
-				$oSubmitter->SubmitMessage($sMsg);
-			
-				sleep(rand($iMinSecs, $iMaxSecs));
+				$iMinSecs = 3;
+				$iMaxSecs = (I_NEXTSECSRUN / count($asMsgs));
+
+				$oSubmitter->SubmitMessage($asMsgs[$i]);
+				
+				if ($i < count($asMsgs))
+					sleep(rand($iMinSecs, $iMaxSecs));
 			}
+			
+			if (count($asMsgs) == 0)
+				$oSubmitter->NoticeNoMessages();
+			else
+				$oSubmitter->NoticeCompletion();
 		}
 		
 		//
@@ -73,8 +80,8 @@ if (B_RUN)
 		//
 		//// PUBLUSHING EMAIL REPORT
 		//
-		
-		$oSubmitter->AlertPublishing();
+		if (count($oG_CCV->asCimpfoPublications))
+			$oSubmitter->AlertPublishing();
 		
 		//
 		//// PRINT VALUES

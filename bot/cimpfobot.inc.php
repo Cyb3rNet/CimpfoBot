@@ -132,6 +132,10 @@ class CCimpfoPublishingAutorisator extends CCampfireShowRoom
 //
 class CCimpfoMessageSubmitter extends CCampfireSpeak
 {
+	const iSoundCrickets = 1;
+	const iSoundTrombone = 2;
+	const iSoundRimshot = 3;
+
 	private $_iPublishCount;
 	private $_iStartTime;
 
@@ -156,7 +160,7 @@ class CCimpfoMessageSubmitter extends CCampfireSpeak
 		{
 			$oXMLMsg = new CCampfireXMLMessage();
 		
-			$oXMLMsg->SetMessage($sMsg, sMsgTypeTextMsg);
+			$oXMLMsg->SetMessage($sMsg, CCampfireXMLMessage::sMsgTypeTextMsg);
 		
 			parent::SetPostString((string) $oXMLMsg);
 			
@@ -164,6 +168,45 @@ class CCimpfoMessageSubmitter extends CCampfireSpeak
 			
 			echo parent::Execute();
 		}
+	}
+	
+	public function SubmitSound($cSound)
+	{
+		if (!isset($_GET["UA"]))
+		{
+			$sMsg = "";
+		
+			switch ($cSound)
+			{
+				case self::iSoundCrickets:
+					$sMsg = "crickets";
+				break;
+				case self::iSoundTrombone:
+					$sMsg = "trombone";
+				break;
+				case self::iSoundRimshot:
+					$sMsg = "rimshot";
+				break;
+			}
+		
+			$oXMLMsg = new CCampfireXMLMessage();
+		
+			$oXMLMsg->SetMessage($sMsg, CCampfireXMLMessage::sMsgTypeSoundMsg);
+		
+			parent::SetPostString((string) $oXMLMsg);
+			
+			echo parent::Execute();
+		}
+	}
+
+	public function NoticeCompletion()
+	{
+		$this->SubmitSound(self::iSoundRimshot);
+	}
+
+	public function NoticeNoMessages()
+	{
+		$this->SubmitSound(self::iSoundCrickets);
 	}
 	
 	public function AlertPublishing()
