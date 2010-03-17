@@ -69,8 +69,8 @@ if (B_RUN)
 			
 			if (count($asMsgs) == 0)
 				$oSubmitter->NoticeNoMessages();
-			else
-				$oSubmitter->NoticeCompletion();
+			//else
+			//	$oSubmitter->NoticeCompletion();
 		}
 		
 		//
